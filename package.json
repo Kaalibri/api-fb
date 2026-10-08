@@ -5,11 +5,24 @@
   "main": "index.js",
   "type": "module",
   "scripts": {
-    "dev": "node index.mjs"
+    "dev": "node index.mjs",
+    "lint": "eslint .",
+    "lint:fix": "eslint . --fix"
   },
   "author": "Gauthier Grandjon",
   "license": "MIT",
   "dependencies": {
-    "express": "^5.2.1"
+    "cors": "^2.8.6",
+    "dotenv": "^18.0.6",
+    "express": "^5.2.1",
+    "express-rate-limit": "^8.7.1",
+    "helmet": "^8.3.0",
+    "jsonwebtoken": "^9.0.3",
+    "mongoose": "^8.24.5"
+  },
+  "devDependencies": {
+    "@eslint/js": "^9.39.5",
+    "eslint": "^9.39.5",
+    "globals": "^17.13.0"
   }
 }

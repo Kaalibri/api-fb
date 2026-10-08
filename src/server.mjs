@@ -8,7 +8,6 @@ import helmet from "helmet";
 import cors from "cors";
 import rateLimit from "express-rate-limit";
 
-
 const Server = class Server {
     constructor() {
         // Create an instance of the Express application,
@@ -48,23 +47,24 @@ const Server = class Server {
         });
     }
 
-    
-
     // middleware de vérification du token JWT
     authToken(req, res, next) {
         // rappel header = metadata de la requête HTTP, contient des informations sur la requête
-        // le même Authirization dans Postman est en fait un header HTTP qui contient le token JWT
-        // on écrit ['authorization'] car le nom du header contient un tiret, donc on ne peut pas utiliser la notation pointée (req.headers.authorization)
-        if (!req.headers['authorization']) return res.sendStatus(403); // Forbidden
+        // le même Authorization dans Postman est en fait un header HTTP qui contient le token JWT
+        // 403 Forbidden : la requête n'a pas de header Authorization
+        if (!req.headers["authorization"]) return res.sendStatus(403);
 
-        const token = req.headers['authorization'];
-        jwt.verify(token, 'efrei', (err, user) => {
-            if (err) return res.sendStatus(401); // Unauthorized
+        const token = req.headers["authorization"];
+        // jwt.verify() vérifie la signature du token avec la clé secrète JWT_SECRET du fichier .env
+        jwt.verify(token, process.env.JWT_SECRET, (err, user) => {
+            // 401 Unauthorized : le token est faux ou a été modifié
+            if (err) return res.sendStatus(401);
 
+            // on range les données du token (id, firstname, lastname, email) dans req.user, pour les routes
             req.user = user;
-            // permet de ne pas renvoyer de résultat si le token est invalide ou absent
+            // next() passe la main à la route, il n'est appelé que si le token est valide
             next();
-        })
+        });
     }
 
     // Middleware configuration
@@ -76,11 +76,16 @@ const Server = class Server {
     // exemple de ce que fait le middleware express.json() : il parse le body de la requête et le transforme en objet JSON
     middleware() {
         // l'ordre d'exécution des middlewares est important, car ils sont exécutés dans l'ordre dans lequel ils sont définis.
-        this.app.use(rateLimit{
-            windowMs: 60*60*1000, // 1 heure
-            limit: 100 // 100 requêtes par IP
-        })
+        // rateLimit limite le nombre de requêtes par adresse IP
+        this.app.use(rateLimit({
+            // 1 heure
+            windowMs: 60*60*1000,
+            // 1000 requêtes par IP
+            limit: 1000
+        }));
+        // helmet ajoute des en-têtes HTTP de sécurité
         this.app.use(helmet());
+        // cors définit quels sites ont le droit d'appeler l'API
         this.app.use(cors({
             origin: this.config.corsOrigins,
             methods: ["GET","POST", "PUT", "PATCH", "DELETE"],
@@ -90,32 +95,41 @@ const Server = class Server {
         this.app.use(express.urlencoded({extended: true}));
     }
 
-
     // Route configuration
     routes() {
         // Sans cette ligne, le serveur ne sait pas comment gérer
         // les routes définies dans le fichier routes.mjs.
         // On crée une nouvelle instance de la classe Users en lui passant
         // l'application Express ET nouvellement la connexion Mongoose
-        new routes.Users(this.app, this.connect, this.authToken);
+        new routes.Users(this.app, this.connect);
         // ajout de this.connect pour autoriser auth à se co à la base et chercher les users présents
         new routes.Auth(this.app, this.connect);
-        new routes.Photos(this.app, this.connect);
+        // Events reçoit en plus authToken, pour protéger la lecture des événements par un token
+        new routes.Events(this.app, this.connect, this.authToken);
+        new routes.Groups(this.app, this.connect);
+        new routes.Threads(this.app, this.connect);
+        new routes.Messages(this.app, this.connect);
         new routes.Albums(this.app, this.connect);
+        new routes.Photos(this.app, this.connect);
+        new routes.Comments(this.app, this.connect);
+        new routes.Polls(this.app, this.connect);
+        new routes.PollAnswers(this.app, this.connect);
+        new routes.TicketTypes(this.app, this.connect);
+        new routes.Tickets(this.app, this.connect);
 
-
+        // si aucune route ne correspond à la requête, on renvoie 404 Not Found
         this.app.use((req, res) => {
             res.status(404).json({
                 code: 404,
                 message: "Not Found"
-            })
-
+            });
         });
     }
+
     // Start the server
     // Ajout de async pour pouvoir utiliser await dans la méthode run()
     async run() {
-        try{
+        try {
             // On attend que la connexion à la base de données soit établie avant de continuer (await)
             await this.dbConnect();
             this.middleware();

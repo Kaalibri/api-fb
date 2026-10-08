@@ -1,0 +1,1971 @@
+{
+  "info": {
+    "_postman_id": "eb844493-4451-4462-abe1-14bd1b42168c",
+    "name": "Z_TP Collection FB",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "_exporter_id": "58275267",
+    "_collection_link": "https://go.postman.co/collection/58275267-eb844493-4451-4462-abe1-14bd1b42168c?source=collection_link"
+  },
+  "item": [
+    {
+      "name": "Users",
+      "item": [
+        {
+          "name": "Création user1 (organisateur)",
+          "request": {
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n    \"firstname\": \"user1_firstname\",\n    \"lastname\": \"user1_lastname\",\n    \"email\": \"user1@test.fr\",\n    \"age\": 30\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "http://localhost:3000/users",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "3000",
+              "path": [
+                "users"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Création user2 (membre)",
+          "request": {
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n    \"firstname\": \"user2_firstname\",\n    \"lastname\": \"user2_lastname\",\n    \"email\": \"user2@test.fr\",\n    \"age\": 28\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "http://localhost:3000/users",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "3000",
+              "path": [
+                "users"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Création user 3",
+          "request": {
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n    \"firstname\": \"user3_firstname\",\n    \"lastname\": \"user3_lastname\",\n    \"email\": \"user3@test.fr\",\n    \"age\": 35\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "http://localhost:3000/users",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "3000",
+              "path": [
+                "users"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Tous les users",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "http://localhost:3000/users",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "3000",
+              "path": [
+                "users"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Un user",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "http://localhost:3000/users/6ac775caf0f60bd3b0aca434",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "3000",
+              "path": [
+                "users",
+                "6ac775caf0f60bd3b0aca434"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Modification partielle d'un user",
+          "request": {
+            "method": "PATCH",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n    \"age\": 29\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "http://localhost:3000/users/6ac7824ccfb23edb5c63f43a",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "3000",
+              "path": [
+                "users",
+                "6ac7824ccfb23edb5c63f43a"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Remplacement complet d'un user",
+          "request": {
+            "method": "PUT",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n    \"firstname\": \"user2_firstname\",\n    \"lastname\": \"user2_lastname\",\n    \"email\": \"user2@test.fr\",\n    \"age\": 29\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "http://localhost:3000/users/6ac7824ccfb23edb5c63f43a",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "3000",
+              "path": [
+                "users",
+                "6ac7824ccfb23edb5c63f43a"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Suppression d'un user",
+          "request": {
+            "method": "DELETE",
+            "header": [],
+            "url": {
+              "raw": "http://localhost:3000/users/6ac782c9cfb23edb5c63f440",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "3000",
+              "path": [
+                "users",
+                "6ac782c9cfb23edb5c63f440"
+              ]
+            }
+          },
+          "response": []
+        }
+      ]
+    },
+    {
+      "name": "Auth",
+      "item": [
+        {
+          "name": "Obtention d'un token",
+          "request": {
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n    \"firstname\": \"user1_firstname\",\n    \"lastname\": \"user1_lastname\",\n    \"email\": \"user1@test.fr\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "http://localhost:3000/auth",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "3000",
+              "path": [
+                "auth"
+              ]
+            }
+          },
+          "response": []
+        }
+      ]
+    },
+    {
+      "name": "Evenements",
+      "item": [
+        {
+          "name": "Création d'un événement public",
+          "request": {
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n    \"event_name\": \"Soirée de rentrée\",\n    \"event_description\": \"Rencontre entre étudiants\",\n    \"event_begin\": \"2026-11-01T18:00\",\n    \"event_end\": \"2026-11-01T23:00\",\n    \"event_location\": \"Paris\",\n    \"event_photo\": \"https://exemple.fr/couverture.jpg\",\n    \"is_event_private\": false,\n    \"event_organisators_list\": [\n        \"6ac775caf0f60bd3b0aca434\"\n    ],\n    \"event_members_list\": []\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "http://localhost:3000/events",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "3000",
+              "path": [
+                "events"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Création d'un événement privé",
+          "request": {
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n    \"event_name\": \"Soirée privée\",\n    \"event_description\": \"Rencontre entre étudiants\",\n    \"event_begin\": \"2026-11-01T18:00\",\n    \"event_end\": \"2026-11-01T23:00\",\n    \"event_location\": \"Paris\",\n    \"event_photo\": \"https://exemple.fr/couverture.jpg\",\n    \"is_event_private\": true,\n    \"event_organisators_list\": [\n        \"6ac775caf0f60bd3b0aca434\"\n    ],\n    \"event_members_list\": []\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "http://localhost:3000/events",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "3000",
+              "path": [
+                "events"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Tous les événements",
+          "request": {
+            "method": "GET",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjZhYzc3NWNhZjBmNjBiZDNiMGFjYTQzNCIsImZpcnN0bmFtZSI6InVzZXIxX2ZpcnN0bmFtZSIsImxhc3RuYW1lIjoidXNlcjFfbGFzdG5hbWUiLCJlbWFpbCI6InVzZXIxQHRlc3QuZnIiLCJpYXQiOjE3OTE0NjQxMjN9.ezjYSFbcXdZzk7CRi03CHTGF_XgYJxX2lPNolgK89-4"
+              }
+            ],
+            "url": {
+              "raw": "http://localhost:3000/events",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "3000",
+              "path": [
+                "events"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Un événement (détail des organisateurs et des membres)",
+          "request": {
+            "method": "GET",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjZhYzc3NWNhZjBmNjBiZDNiMGFjYTQzNCIsImZpcnN0bmFtZSI6InVzZXIxX2ZpcnN0bmFtZSIsImxhc3RuYW1lIjoidXNlcjFfbGFzdG5hbWUiLCJlbWFpbCI6InVzZXIxQHRlc3QuZnIiLCJpYXQiOjE3OTE0NjQxMjN9.ezjYSFbcXdZzk7CRi03CHTGF_XgYJxX2lPNolgK89-4"
+              }
+            ],
+            "url": {
+              "raw": "http://localhost:3000/events/6ac77841f0f60bd3b0aca43a",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "3000",
+              "path": [
+                "events",
+                "6ac77841f0f60bd3b0aca43a"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Modification partielle d'un événement",
+          "request": {
+            "method": "PATCH",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n    \"event_location\": \"Lyon\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "http://localhost:3000/events/6ac77841f0f60bd3b0aca43a",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "3000",
+              "path": [
+                "events",
+                "6ac77841f0f60bd3b0aca43a"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Remplacement complet d'un événement",
+          "request": {
+            "method": "PUT",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n    \"event_name\": \"Soirée de rentrée\",\n    \"event_description\": \"Rencontre entre étudiants\",\n    \"event_begin\": \"2026-11-01T18:00\",\n    \"event_end\": \"2026-11-01T23:00\",\n    \"event_location\": \"Lyon\",\n    \"event_photo\": \"https://exemple.fr/couverture.jpg\",\n    \"is_event_private\": false,\n    \"event_organisators_list\": [\n        \"6ac775caf0f60bd3b0aca434\"\n    ],\n    \"event_members_list\": []\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "http://localhost:3000/events/6ac77841f0f60bd3b0aca43a",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "3000",
+              "path": [
+                "events",
+                "6ac77841f0f60bd3b0aca43a"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Ajout d'un membre à l'événement",
+          "request": {
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n    \"user_id\": \"6ac792fa0bca2a466e0524ca\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "http://localhost:3000/events/6ac78597cfb23edb5c63f458/members/",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "3000",
+              "path": [
+                "events",
+                "6ac78597cfb23edb5c63f458",
+                "members",
+                ""
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Ajout d'un deuxième membre",
+          "request": {
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n    \"user_id\": \"6ac792fa0bca2a466e0524ca\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "http://localhost:3000/events/6ac77841f0f60bd3b0aca43a/members",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "3000",
+              "path": [
+                "events",
+                "6ac77841f0f60bd3b0aca43a",
+                "members"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Retrait d'un membre de l'événement",
+          "request": {
+            "method": "DELETE",
+            "header": [],
+            "url": {
+              "raw": "http://localhost:3000/events/6ac77841f0f60bd3b0aca43a/members/6ac792fa0bca2a466e0524ca",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "3000",
+              "path": [
+                "events",
+                "6ac77841f0f60bd3b0aca43a",
+                "members",
+                "6ac792fa0bca2a466e0524ca"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Suppression d'un événement",
+          "request": {
+            "method": "DELETE",
+            "header": [],
+            "url": {
+              "raw": "http://localhost:3000/events/6ac78594cfb23edb5c63f456",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "3000",
+              "path": [
+                "events",
+                "6ac78594cfb23edb5c63f456"
+              ]
+            }
+          },
+          "response": []
+        }
+      ]
+    },
+    {
+      "name": "Groupes",
+      "item": [
+        {
+          "name": "Création d'un groupe (son fil de discussion est créé automatiquement)",
+          "request": {
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n    \"group_name\": \"Promo Efrei\",\n    \"group_description\": \"Groupe de la promotion\",\n    \"group_icon\": \"https://exemple.fr/icone.png\",\n    \"group_photo\": \"https://exemple.fr/groupe.jpg\",\n    \"group_type\": \"private\",\n    \"group_members_can_post\": false,\n    \"group_members_can_create_events\": false,\n    \"group_admins_list\": [\n        \"6ac775caf0f60bd3b0aca434\"\n    ],\n    \"group_members_list\": [\n        \"6ac775caf0f60bd3b0aca434\",\n        \"6ac7824ccfb23edb5c63f43a\"\n    ]\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "http://localhost:3000/groups",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "3000",
+              "path": [
+                "groups"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Tous les groupes",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "http://localhost:3000/groups",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "3000",
+              "path": [
+                "groups"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Un groupe (détail des administrateurs et des membres)",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "http://localhost:3000/groups/6ac794130bca2a466e0524da",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "3000",
+              "path": [
+                "groups",
+                "6ac794130bca2a466e0524da"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Modification partielle d'un groupe",
+          "request": {
+            "method": "PATCH",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n    \"group_description\": \"Groupe de la promotion 2029lfksjkflds\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "http://localhost:3000/groups/6ac798770bca2a466e0524ed",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "3000",
+              "path": [
+                "groups",
+                "6ac798770bca2a466e0524ed"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Remplacement complet d'un groupe",
+          "request": {
+            "method": "PUT",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n    \"group_name\": \"Promo Efrei\",\n    \"group_description\": \"Groupe de la promotion\",\n    \"group_icon\": \"https://exemple.fr/icone.png\",\n    \"group_photo\": \"https://exemple.fr/groupe.jpg\",\n    \"group_type\": \"private\",\n    \"group_members_can_post\": false,\n    \"group_members_can_create_events\": false,\n    \"group_admins_list\": [\n        \"6ac775caf0f60bd3b0aca434\"\n    ],\n    \"group_members_list\": [\n        \"6ac775caf0f60bd3b0aca434\",\n        \"6ac7824ccfb23edb5c63f43a\"\n    ]\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "http://localhost:3000/groups/6ac794130bca2a466e0524da",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "3000",
+              "path": [
+                "groups",
+                "6ac794130bca2a466e0524da"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Ajout d'un membre au groupe",
+          "request": {
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n    \"user_id\": \"6ac792fa0bca2a466e0524ca\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "http://localhost:3000/groups/6ac794130bca2a466e0524da/members",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "3000",
+              "path": [
+                "groups",
+                "6ac794130bca2a466e0524da",
+                "members"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Retrait d'un membre du groupe",
+          "request": {
+            "method": "DELETE",
+            "header": [],
+            "url": {
+              "raw": "http://localhost:3000/groups/6ac794130bca2a466e0524da/members/6ac792fa0bca2a466e0524ca",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "3000",
+              "path": [
+                "groups",
+                "6ac794130bca2a466e0524da",
+                "members",
+                "6ac792fa0bca2a466e0524ca"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Création d'un événement dans le groupe (tous les membres sont invités)",
+          "request": {
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n    \"event_name\": \"Sortie du groupe\",\n    \"event_description\": \"Rencontre entre étudiants\",\n    \"event_begin\": \"2026-11-01T18:00\",\n    \"event_end\": \"2026-11-01T23:00\",\n    \"event_location\": \"Paris\",\n    \"event_photo\": \"https://exemple.fr/couverture.jpg\",\n    \"is_event_private\": false,\n    \"event_organisators_list\": [\n        \"6ac775caf0f60bd3b0aca434\"\n    ]\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "http://localhost:3000/groups/6ac794130bca2a466e0524da/events",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "3000",
+              "path": [
+                "groups",
+                "6ac794130bca2a466e0524da",
+                "events"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Événements du groupe",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "http://localhost:3000/groups/6ac794130bca2a466e0524da/events",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "3000",
+              "path": [
+                "groups",
+                "6ac794130bca2a466e0524da",
+                "events"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Suppression d'un groupe",
+          "request": {
+            "method": "DELETE",
+            "header": [],
+            "url": {
+              "raw": "http://localhost:3000/groups/6ac798780bca2a466e0524f1",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "3000",
+              "path": [
+                "groups",
+                "6ac798780bca2a466e0524f1"
+              ]
+            }
+          },
+          "response": []
+        }
+      ]
+    },
+    {
+      "name": "Fils de discussion",
+      "item": [
+        {
+          "name": "Fil de discussion du groupe",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "http://localhost:3000/groups/6ac794130bca2a466e0524da/thread",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "3000",
+              "path": [
+                "groups",
+                "6ac794130bca2a466e0524da",
+                "thread"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Création du fil de discussion d'un événement",
+          "request": {
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n    \"thread_event\": \"6ac77841f0f60bd3b0aca43a\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "http://localhost:3000/threads",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "3000",
+              "path": [
+                "threads"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Tous les fils",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "http://localhost:3000/threads",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "3000",
+              "path": [
+                "threads"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Un fil",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "http://localhost:3000/threads/6ac794130bca2a466e0524dc",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "3000",
+              "path": [
+                "threads",
+                "6ac794130bca2a466e0524dc"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Fil de discussion d'un événement",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "http://localhost:3000/events/6ac794130bca2a466e0524dc/thread",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "3000",
+              "path": [
+                "events",
+                "6ac794130bca2a466e0524dc",
+                "thread"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Suppression d'un fil",
+          "request": {
+            "method": "DELETE",
+            "header": [],
+            "url": {
+              "raw": "http://localhost:3000/threads/6ac798c20bca2a466e0524ff",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "3000",
+              "path": [
+                "threads",
+                "6ac798c20bca2a466e0524ff"
+              ]
+            }
+          },
+          "response": []
+        }
+      ]
+    },
+    {
+      "name": "Messages",
+      "item": [
+        {
+          "name": "Message d'un membre dans le fil de l'événement",
+          "request": {
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n    \"message_content\": \"Bonjour à tous\",\n    \"message_thread\": \"6ac794130bca2a466e0524dc\",\n    \"message_author\": \"6ac775caf0f60bd3b0aca434\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "http://localhost:3000/messages",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "3000",
+              "path": [
+                "messages"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Réponse à un message",
+          "request": {
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n    \"message_content\": \"Bienvenue féponse\",\n    \"message_thread\": \"6ac794130bca2a466e0524dc\",\n    \"message_author\": \"6ac775caf0f60bd3b0aca434\",\n    \"message_parent\": \"6ac799590bca2a466e052508\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "http://localhost:3000/messages",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "3000",
+              "path": [
+                "messages"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Message d'un administrateur dans le fil du groupe",
+          "request": {
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n    \"message_content\": \"Annonce du groupe\",\n    \"message_thread\": \"6ac794130bca2a466e0524dc\",\n    \"message_author\": \"6ac775caf0f60bd3b0aca434\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "http://localhost:3000/messages",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "3000",
+              "path": [
+                "messages"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Messages d'un fil",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "http://localhost:3000/threads/6ac794130bca2a466e0524dc/messages",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "3000",
+              "path": [
+                "threads",
+                "6ac794130bca2a466e0524dc",
+                "messages"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Un message",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "http://localhost:3000/messages/6ac799590bca2a466e052508",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "3000",
+              "path": [
+                "messages",
+                "6ac799590bca2a466e052508"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Suppression d'un message",
+          "request": {
+            "method": "DELETE",
+            "header": [],
+            "url": {
+              "raw": "http://localhost:3000/messages/6ac7995a0bca2a466e05250c",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "3000",
+              "path": [
+                "messages",
+                "6ac7995a0bca2a466e05250c"
+              ]
+            }
+          },
+          "response": []
+        }
+      ]
+    },
+    {
+      "name": "Albums",
+      "item": [
+        {
+          "name": "Création d'un album",
+          "request": {
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n    \"album_name\": \"Photos de la soirée3\",\n    \"album_description\": \"Souvenirs\",\n    \"album_event\": \"6ac77841f0f60bd3b0aca43a\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "http://localhost:3000/albums",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "3000",
+              "path": [
+                "albums"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Tous les albums",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "http://localhost:3000/albums",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "3000",
+              "path": [
+                "albums"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Albums d'un événement",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "http://localhost:3000/events/6ac77841f0f60bd3b0aca43a/albums",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "3000",
+              "path": [
+                "events",
+                "6ac77841f0f60bd3b0aca43a",
+                "albums"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Un album",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "http://localhost:3000/albums/6ac79a370bca2a466e05252c",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "3000",
+              "path": [
+                "albums",
+                "6ac79a370bca2a466e05252c"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Modification partielle d'un album",
+          "request": {
+            "method": "PATCH",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n    \"album_description\": \"Souvenirs de la rentrée modif part\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "http://localhost:3000/albums/6ac79a370bca2a466e05252c",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "3000",
+              "path": [
+                "albums",
+                "6ac79a370bca2a466e05252c"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Remplacement complet d'un album",
+          "request": {
+            "method": "PUT",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n    \"album_name\": \"Photos de la soirée replace\",\n    \"album_description\": \"Souvenirs de la rentrée\",\n    \"album_event\": \"6ac77841f0f60bd3b0aca43a\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "http://localhost:3000/albums/6ac79a370bca2a466e05252c",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "3000",
+              "path": [
+                "albums",
+                "6ac79a370bca2a466e05252c"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Suppression d'un album",
+          "request": {
+            "method": "DELETE",
+            "header": [],
+            "url": {
+              "raw": "http://localhost:3000/albums/6ac79a410bca2a466e052532",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "3000",
+              "path": [
+                "albums",
+                "6ac79a410bca2a466e052532"
+              ]
+            }
+          },
+          "response": []
+        }
+      ]
+    },
+    {
+      "name": "Photos",
+      "item": [
+        {
+          "name": "Photo postée par un participant",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjZhYzc3NWNhZjBmNjBiZDNiMGFjYTQzNCIsImZpcnN0bmFtZSI6InVzZXIxX2ZpcnN0bmFtZSIsImxhc3RuYW1lIjoidXNlcjFfbGFzdG5hbWUiLCJlbWFpbCI6InVzZXIxQHRlc3QuZnIiLCJpYXQiOjE3OTE0NjY0NTd9.a1-0NK4Rr-GOOIfjwETio1jHfONgHmdk1i1qQ092ZdM"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n    \"photo_url\": \"https://exemple.fr/photo3.jpg\",\n    \"photo_album\": \"6ac79a370bca2a466e05252c\",\n    \"photo_author\": \"6ac775caf0f60bd3b0aca434\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "http://localhost:3000/photos",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "3000",
+              "path": [
+                "photos"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Photos d'un album",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "http://localhost:3000/albums/6ac79a370bca2a466e05252c/photos",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "3000",
+              "path": [
+                "albums",
+                "6ac79a370bca2a466e05252c",
+                "photos"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Une photo",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "http://localhost:3000/photos/6ac79ca70bca2a466e052546",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "3000",
+              "path": [
+                "photos",
+                "6ac79ca70bca2a466e052546"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Suppression d'une photo",
+          "request": {
+            "method": "DELETE",
+            "header": [],
+            "url": {
+              "raw": "http://localhost:3000/photos/6ac79cc40bca2a466e05254f",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "3000",
+              "path": [
+                "photos",
+                "6ac79cc40bca2a466e05254f"
+              ]
+            }
+          },
+          "response": []
+        }
+      ]
+    },
+    {
+      "name": "Commentaires",
+      "item": [
+        {
+          "name": "Commentaire d'un participant",
+          "request": {
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n    \"comment_content\": \"Superbe photo\",\n    \"comment_photo\": \"6ac79c940bca2a466e052542\",\n    \"comment_author\": \"6ac775caf0f60bd3b0aca434\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "http://localhost:3000/comments",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "3000",
+              "path": [
+                "comments"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Commentaires d'une photo",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "http://localhost:3000/photos/6ac79c940bca2a466e052542/comments",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "3000",
+              "path": [
+                "photos",
+                "6ac79c940bca2a466e052542",
+                "comments"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Un commentaire",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "http://localhost:3000/comments/6ac79d0b0bca2a466e05255a",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "3000",
+              "path": [
+                "comments",
+                "6ac79d0b0bca2a466e05255a"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Suppression d'un commentaire",
+          "request": {
+            "method": "DELETE",
+            "header": [],
+            "url": {
+              "raw": "http://localhost:3000/comments/6ac79d0b0bca2a466e05255f",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "3000",
+              "path": [
+                "comments",
+                "6ac79d0b0bca2a466e05255f"
+              ]
+            }
+          },
+          "response": []
+        }
+      ]
+    },
+    {
+      "name": "Sondages",
+      "item": [
+        {
+          "name": "Création d'un sondage par un organisateur",
+          "request": {
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n    \"poll_title\": \"Organisation du repas3\",\n    \"poll_event\": \"6ac794f60bca2a466e0524eb\",\n    \"poll_author\": \"6ac775caf0f60bd3b0aca434\",\n    \"poll_questions\": [\n        {\n            \"question_title\": \"Quel plat ?\",\n            \"question_answers\": [\n                \"Pizza\",\n                \"Sushi\"\n            ]\n        },\n        {\n            \"question_title\": \"Quelle heure ?\",\n            \"question_answers\": [\n                \"19h\",\n                \"20h\",\n                \"21h\"\n            ]\n        }\n    ]\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "http://localhost:3000/polls",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "3000",
+              "path": [
+                "polls"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Tous les sondages",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "http://localhost:3000/polls",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "3000",
+              "path": [
+                "polls"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Sondages d'un événement",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "http://localhost:3000/events/6ac794f60bca2a466e0524eb/polls",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "3000",
+              "path": [
+                "events",
+                "6ac794f60bca2a466e0524eb",
+                "polls"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Modification partielle d'un sondage",
+          "request": {
+            "method": "PATCH",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n    \"poll_title\": \"Organisation du dîner\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "http://localhost:3000/polls/6ac79d9e0bca2a466e05256c",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "3000",
+              "path": [
+                "polls",
+                "6ac79d9e0bca2a466e05256c"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Remplacement complet d'un sondage",
+          "request": {
+            "method": "PUT",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n    \"poll_title\": \"Organisation du dîner\",\n    \"poll_event\": \"6ac794f60bca2a466e0524eb\",\n    \"poll_author\": \"6ac775caf0f60bd3b0aca434\",\n    \"poll_questions\": [\n        {\n            \"question_title\": \"Quel plat ?\",\n            \"question_answers\": [\n                \"Pizza\",\n                \"Sushi\",\n                \"Viande\"\n            ]\n        },\n        {\n            \"question_title\": \"Quelle heure ?\",\n            \"question_answers\": [\n                \"19h\",\n                \"20h\",\n                \"21h\"\n            ]\n        }\n    ]\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "http://localhost:3000/polls/6ac79d9e0bca2a466e05256c",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "3000",
+              "path": [
+                "polls",
+                "6ac79d9e0bca2a466e05256c"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Un sondage (copier l'_id d'une question)",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "http://localhost:3000/polls/6ac79d9e0bca2a466e05256c",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "3000",
+              "path": [
+                "polls",
+                "6ac79d9e0bca2a466e05256c"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Suppression d'un sondage",
+          "request": {
+            "method": "DELETE",
+            "header": [],
+            "url": {
+              "raw": "http://localhost:3000/polls/6ac79da30bca2a466e052571",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "3000",
+              "path": [
+                "polls",
+                "6ac79da30bca2a466e052571"
+              ]
+            }
+          },
+          "response": []
+        }
+      ]
+    },
+    {
+      "name": "Réponses aux sondages",
+      "item": [
+        {
+          "name": "Réponse d'un participant à une question",
+          "request": {
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n    \"answer_poll\": \"6ac79d9e0bca2a466e05256c\",\n    \"answer_question\": \"6ac79e280bca2a466e052591\",\n    \"answer_user\": \"6ac7824ccfb23edb5c63f43a\",\n    \"answer_choice\": \"Pizza\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "http://localhost:3000/poll-answers",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "3000",
+              "path": [
+                "poll-answers"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Réponses d'un sondage",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "http://localhost:3000/polls/6ac79d9e0bca2a466e05256c/answers",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "3000",
+              "path": [
+                "polls",
+                "6ac79d9e0bca2a466e05256c",
+                "answers"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Une réponse",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "http://localhost:3000/poll-answers/6ac79e770bca2a466e0525a0",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "3000",
+              "path": [
+                "poll-answers",
+                "6ac79e770bca2a466e0525a0"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Suppression d'une réponse",
+          "request": {
+            "method": "DELETE",
+            "header": [],
+            "url": {
+              "raw": "http://localhost:3000/poll-answers/6ac79ed30bca2a466e0525b3",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "3000",
+              "path": [
+                "poll-answers",
+                "6ac79ed30bca2a466e0525b3"
+              ]
+            }
+          },
+          "response": []
+        }
+      ]
+    },
+    {
+      "name": "Types de billets",
+      "item": [
+        {
+          "name": "Création d'un type de billet (stock de 2)",
+          "request": {
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n    \"ticket_type_name\": \"Standard3\",\n    \"ticket_type_amount\": 1000,\n    \"ticket_type_quantity\": 2,\n    \"ticket_type_event\": \"6ac794f60bca2a466e0524eb\",\n    \"ticket_type_author\": \"6ac775caf0f60bd3b0aca434\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "http://localhost:3000/ticket-types",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "3000",
+              "path": [
+                "ticket-types"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Tous les types de billets",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "http://localhost:3000/ticket-types",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "3000",
+              "path": [
+                "ticket-types"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Types de billets d'un événement",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "http://localhost:3000/events/6ac794f60bca2a466e0524eb/ticket-types",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "3000",
+              "path": [
+                "events",
+                "6ac794f60bca2a466e0524eb",
+                "ticket-types"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Un type de billet",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "http://localhost:3000/ticket-types/6ac79f640bca2a466e0525c0",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "3000",
+              "path": [
+                "ticket-types",
+                "6ac79f640bca2a466e0525c0"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Modification partielle d'un type de billet",
+          "request": {
+            "method": "PATCH",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n    \"ticket_type_amount\": 1244444\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "http://localhost:3000/ticket-types/6ac79f640bca2a466e0525c0",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "3000",
+              "path": [
+                "ticket-types",
+                "6ac79f640bca2a466e0525c0"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Remplacement complet d'un type de billet",
+          "request": {
+            "method": "PUT",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n    \"ticket_type_name\": \"Standard\",\n    \"ticket_type_amount\": 999,\n    \"ticket_type_quantity\": 2,\n    \"ticket_type_event\": \"6ac794f60bca2a466e0524eb\",\n    \"ticket_type_author\": \"6ac775caf0f60bd3b0aca434\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "http://localhost:3000/ticket-types/6ac79f640bca2a466e0525c0",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "3000",
+              "path": [
+                "ticket-types",
+                "6ac79f640bca2a466e0525c0"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Suppression d'un type de billet",
+          "request": {
+            "method": "DELETE",
+            "header": [],
+            "url": {
+              "raw": "http://localhost:3000/ticket-types/6ac79f6d0bca2a466e0525c3",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "3000",
+              "path": [
+                "ticket-types",
+                "6ac79f6d0bca2a466e0525c3"
+              ]
+            }
+          },
+          "response": []
+        }
+      ]
+    },
+    {
+      "name": "Billets",
+      "item": [
+        {
+          "name": "Achat d'un billet",
+          "request": {
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n    \"ticket_type\": \"6ac79f5a0bca2a466e0525bd\",\n    \"ticket_lastname\": \"Dupaaont\",\n    \"ticket_firstname\": \"Marzzie\",\n    \"ticket_address\": \"rue test\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "http://localhost:3000/tickets",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "3000",
+              "path": [
+                "tickets"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Tous les billets",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "http://localhost:3000/tickets",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "3000",
+              "path": [
+                "tickets"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Billets d'un type",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "http://localhost:3000/ticket-types/6ac79f5a0bca2a466e0525bd/tickets",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "3000",
+              "path": [
+                "ticket-types",
+                "6ac79f5a0bca2a466e0525bd",
+                "tickets"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Un billet",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "http://localhost:3000/tickets/6ac7a0560bca2a466e0525d0",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "3000",
+              "path": [
+                "tickets",
+                "6ac7a0560bca2a466e0525d0"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Suppression d'un billet",
+          "request": {
+            "method": "DELETE",
+            "header": [],
+            "url": {
+              "raw": "http://localhost:3000/tickets/6ac7a0670bca2a466e0525d8",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "3000",
+              "path": [
+                "tickets",
+                "6ac7a0670bca2a466e0525d8"
+              ]
+            }
+          },
+          "response": []
+        }
+      ]
+    }
+  ]
+}
