@@ -1,0 +1,15 @@
+{
+  "name": "api-fb",
+  "version": "1.0.0",
+  "description": "TP Facebook 20261008",
+  "main": "index.js",
+  "type": "module",
+  "scripts": {
+    "dev": "node index.mjs"
+  },
+  "author": "Gauthier Grandjon",
+  "license": "MIT",
+  "dependencies": {
+    "express": "^5.2.1"
+  }
+}
